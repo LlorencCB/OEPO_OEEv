@@ -9,6 +9,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix terms: <http://purl.org/dc/terms/> .
 @prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
@@ -273,6 +274,25 @@ m3p:fromVariety rdf:type owl:ObjectProperty ;
                 rdfs:label "variety"@en .
 
 
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasAdministrativeContact
+m3p:hasAdministrativeContact rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf m3p:hasContact ;
+                             rdfs:label "contact administratif"@fr ,
+                                        "has administrative contact"@en .
+
+
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasContact
+m3p:hasContact rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( m3p:Experiment
+                                           m3p:Project
+                                         )
+                           ] ;
+               rdfs:range foaf:Agent ;
+               rdfs:label "contact"@en ,
+                          "correspondant"@fr .
+
+
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasDocument
 m3p:hasDocument rdf:type owl:ObjectProperty ;
                 rdfs:domain owl:Thing ;
@@ -327,6 +347,18 @@ m3p:hasPart rdf:type owl:ObjectProperty ;
                        "has part"@en .
 
 
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasProjectCoordinator
+m3p:hasProjectCoordinator rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf m3p:hasContact ;
+                          rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( m3p:Experiment
+                                                      m3p:Project
+                                                    )
+                                      ] ;
+                          rdfs:label "coordinateur"@fr ,
+                                     "coordinator"@en .
+
+
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasQuality
 m3p:hasQuality rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf owl:topObjectProperty ;
@@ -344,6 +376,20 @@ m3p:hasScale rdf:type owl:ObjectProperty ,
              rdfs:label "has scale"@en .
 
 
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasScientificContact
+m3p:hasScientificContact rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf m3p:hasContact ;
+                         rdfs:label "contact scientifique"@fr ,
+                                    "scientific contact"@en .
+
+
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasScientificSupervisor
+m3p:hasScientificSupervisor rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf m3p:hasContact ;
+                            rdfs:domain m3p:Experiment ;
+                            rdfs:label "has scientific supervisor"@en .
+
+
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasSubProject
 m3p:hasSubProject rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf m3p:hasPart ;
@@ -351,6 +397,21 @@ m3p:hasSubProject rdf:type owl:ObjectProperty ;
                   rdfs:range m3p:SubProject ;
                   rdfs:label "sous-projet"@fr ,
                              "sub-project"@en .
+
+
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasTechnicalContact
+m3p:hasTechnicalContact rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf m3p:hasContact ;
+                        rdfs:domain m3p:ExperimentalContext ;
+                        rdfs:label "contact technique"@fr ,
+                                   "technical contact"@en .
+
+
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasTechnicalSupervisor
+m3p:hasTechnicalSupervisor rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf m3p:hasContact ;
+                           rdfs:domain m3p:Experiment ;
+                           rdfs:label "has technical supervisor"@en .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasTreatment
@@ -450,13 +511,6 @@ m3p:hasAcronym rdf:type owl:DatatypeProperty ;
                           "has acronym"@en .
 
 
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasAdministrativeContact
-m3p:hasAdministrativeContact rdf:type owl:DatatypeProperty ;
-                             rdfs:subPropertyOf m3p:hasContact ;
-                             rdfs:label "contact administratif"@fr ,
-                                        "has administrative contact"@en .
-
-
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasAlias
 m3p:hasAlias rdf:type owl:DatatypeProperty ;
              rdfs:label "alias"@en ,
@@ -469,17 +523,6 @@ m3p:hasCarNumber rdf:type owl:DatatypeProperty ;
                  rdfs:range xsd:string ;
                  rdfs:label "car number"@en ,
                             "numéro du chariot"@fr .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasContact
-m3p:hasContact rdf:type owl:DatatypeProperty ;
-               rdfs:domain [ rdf:type owl:Class ;
-                             owl:unionOf ( m3p:Experiment
-                                           m3p:Project
-                                         )
-                           ] ;
-               rdfs:label "contact"@en ,
-                          "correspondant"@fr .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasDate
@@ -584,37 +627,12 @@ m3p:hasPotAlias rdf:type owl:DatatypeProperty ;
                            "pot alias"@en .
 
 
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasProjectCoordinator
-m3p:hasProjectCoordinator rdf:type owl:DatatypeProperty ;
-                          rdfs:domain [ rdf:type owl:Class ;
-                                        owl:unionOf ( m3p:Experiment
-                                                      m3p:Project
-                                                    )
-                                      ] ;
-                          rdfs:label "coordinateur"@fr ,
-                                     "coordinator"@en .
-
-
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasRepetition
 m3p:hasRepetition rdf:type owl:DatatypeProperty ;
                   rdfs:domain m3p:ScientificObject ;
                   rdfs:range xsd:string ;
                   rdfs:label "repetition"@en ,
                              "répétition"@fr .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasScientificContact
-m3p:hasScientificContact rdf:type owl:DatatypeProperty ;
-                         rdfs:subPropertyOf m3p:hasContact ;
-                         rdfs:range xsd:string ;
-                         rdfs:label "contact scientifique"@fr ,
-                                    "scientific contact"@en .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasScientificSupervisor
-m3p:hasScientificSupervisor rdf:type owl:DatatypeProperty ;
-                            rdfs:domain m3p:Experiment ;
-                            rdfs:label "has scientific supervisor"@en .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasStartDate
@@ -635,21 +653,6 @@ m3p:hasTagPattern rdf:type owl:DatatypeProperty ;
 m3p:hasTareWeight rdf:type owl:DatatypeProperty ;
                   rdfs:domain m3p:CarSupport ,
                               m3p:Pot .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasTechnicalContact
-m3p:hasTechnicalContact rdf:type owl:DatatypeProperty ;
-                        rdfs:subPropertyOf m3p:hasContact ;
-                        rdfs:domain m3p:ExperimentalContext ;
-                        rdfs:range xsd:string ;
-                        rdfs:label "contact technique"@fr ,
-                                   "technical contact"@en .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasTechnicalSupervisor
-m3p:hasTechnicalSupervisor rdf:type owl:DatatypeProperty ;
-                           rdfs:domain m3p:Experiment ;
-                           rdfs:label "has technical supervisor"@en .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasTreatmentFactor
@@ -1540,6 +1543,10 @@ m3p:WindSensor rdf:type owl:Class ;
                rdfs:isDefinedBy "http://purl.oclc.org/NET/ssnx/meteo/aws#WindSensor" ;
                rdfs:label "anémomètre"@fr ,
                           "wind sensor"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+foaf:Agent rdf:type owl:Class .
 
 
 #################################################################
