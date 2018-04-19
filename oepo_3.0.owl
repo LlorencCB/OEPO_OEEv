@@ -233,15 +233,26 @@ owl:deprecated rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#fromGeneticProperty
+m3p:fromGeneticProperty rdf:type owl:ObjectProperty ,
+                                 owl:TransitiveProperty ;
+                        rdfs:domain [ rdf:type owl:Class ;
+                                      owl:unionOf ( m3p:GeneticProperty
+                                                    m3p:ScientificObject
+                                                  )
+                                    ] ;
+                        rdfs:range m3p:GeneticProperty .
+
+
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#fromGenus
 m3p:fromGenus rdf:type owl:ObjectProperty ;
-              rdfs:domain m3p:Species ;
+              rdfs:subPropertyOf m3p:fromGeneticProperty ;
               rdfs:range m3p:Genus .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#fromSeedLot
 m3p:fromSeedLot rdf:type owl:ObjectProperty ;
-                rdfs:domain m3p:SeedLotSample ;
+                rdfs:subPropertyOf m3p:fromGeneticProperty ;
                 rdfs:range m3p:SeedLot ;
                 rdfs:label "lot de graine"@fr ,
                            "seed lot"@en .
@@ -249,7 +260,7 @@ m3p:fromSeedLot rdf:type owl:ObjectProperty ;
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#fromSeedLotSample
 m3p:fromSeedLotSample rdf:type owl:ObjectProperty ;
-                      rdfs:domain m3p:ScientificObject ;
+                      rdfs:subPropertyOf m3p:fromGeneticProperty ;
                       rdfs:range m3p:SeedLotSample ;
                       rdfs:label "seed lot sample"@en ,
                                  "échantillon de lot de semence"@fr .
@@ -257,6 +268,8 @@ m3p:fromSeedLotSample rdf:type owl:ObjectProperty ;
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#fromVariety
 m3p:fromVariety rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf m3p:fromGeneticProperty ;
+                rdfs:range m3p:Variety ;
                 rdfs:label "variety"@en .
 
 
@@ -355,12 +368,6 @@ m3p:hasVariable rdf:type owl:ObjectProperty ;
                 rdfs:isDefinedBy "http://purl.org/ppeo/PPEO.owl#hasVariable" ;
                 rdfs:label "has variable"@en ,
                            "variable"@fr .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasVariety
-m3p:hasVariety rdf:type owl:ObjectProperty ;
-               rdfs:domain m3p:ScientificObject ;
-               rdfs:range m3p:Variety .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#initialAssociatedSensor
