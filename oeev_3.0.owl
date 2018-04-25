@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.phenome-fppn.fr/vocabulary/m3p/2015/event"
+     xml:base="http://www.phenome-fppn.fr/vocabulary/2018/oeev"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.phenome-fppn.fr/vocabulary/m3p/2015/event">
-    <Prefix name="" IRI="http://www.phenome-fppn.fr/vocabulary/m3p/2015/event"/>
+     ontologyIRI="http://www.phenome-fppn.fr/vocabulary/2018/oeev">
+    <Prefix name="" IRI="http://www.phenome-fppn.fr/vocabulary/2018/oeev"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -32,208 +32,184 @@ The event Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/by
         <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">OpenSILEX - Ontology of Experimental Events (OEEv)</Literal>
     </Annotation>
     <Declaration>
-        <Class IRI="#Potting"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Cleaning"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PhenologyStage"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasCreationDate"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Installation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PotFall"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AddingProduct"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Sampling"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Clipping"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Loading"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#to"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Sowing"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Irrigation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FacilityManagement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PestAttack"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ObservedPhenology"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasSubject"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Pest"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Operability"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CurativeTreatment"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MoveFrom"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Treatment"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Dysfunction"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#fromDevice"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#occursAfter"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ScientificObjectManagement"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasDocument"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasAuthor"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MoveTo"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Thinning"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Breakdown"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="time:hasTime"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Lodging"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Trouble"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#fromIP"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Displacement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Calibration"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AutomaticCalibration"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasObservedPhenologicStage"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CorrectiveMaintenance"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Incident"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Start"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#concern"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#ManualCalibration"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PreventativeTreatment"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Stop"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#occursBefore"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#leafStage"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasPest"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#isConfidential"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasDescription"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Servicing"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Cheking"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Fertilization"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#from"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#emergence"/>
+        <Class IRI="#Breakdown"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Event"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Restart"/>
+        <Class IRI="#Start"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MoveTo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#leafStage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Treatment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Displacement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Thinning"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Staking"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#silking"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Reparation"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#anthesis"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#StuckPlant"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasEvent"/>
+        <ObjectProperty IRI="#concern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Calibration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PestAttack"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#from"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasDocument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Loading"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PotFall"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:hasTime"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MoveFrom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Detasseling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Irrigation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#fromIP"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#silking"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Harvesting"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#AutomaticCalibration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sampling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lodging"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sowing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#to"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Clipping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ScientificObjectManagement"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cleaning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Incident"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dysfunction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Servicing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Potting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Installation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Checking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Reparation"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#anthesis"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#fromDevice"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#EvolutiveMaintenance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trouble"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CorrectiveMaintenance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pest"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#emergence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Restart"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AddingProduct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CurativeTreatment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhenologyScoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fertilization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PreventativeTreatment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Operability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FacilityManagement"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isConfidential"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPest"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#AddingProduct"/>
@@ -252,7 +228,7 @@ The event Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/by
         <Class IRI="#FacilityManagement"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Cheking"/>
+        <Class IRI="#Checking"/>
         <Class IRI="#Servicing"/>
     </SubClassOf>
     <SubClassOf>
@@ -270,6 +246,10 @@ The event Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/by
     <SubClassOf>
         <Class IRI="#CurativeTreatment"/>
         <Class IRI="#Treatment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Detasseling"/>
+        <Class IRI="#ScientificObjectManagement"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Displacement"/>
@@ -340,6 +320,10 @@ The event Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/by
     <SubClassOf>
         <Class IRI="#PestAttack"/>
         <Class IRI="#Incident"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhenologyScoring"/>
+        <Class IRI="#ScientificObjectManagement"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PotFall"/>
@@ -419,14 +403,6 @@ The event Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/by
         <ObjectProperty IRI="#hasPest"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#concern"/>
-        <ObjectProperty IRI="#hasEvent"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#occursAfter"/>
-        <ObjectProperty IRI="#occursBefore"/>
-    </InverseObjectProperties>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#from"/>
     </FunctionalObjectProperty>
@@ -442,44 +418,16 @@ The event Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/by
         <Class IRI="#MoveFrom"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasObservedPhenologicStage"/>
-        <Class IRI="#ObservedPhenology"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPest"/>
         <Class IRI="#PestAttack"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#occursAfter"/>
-        <Class IRI="#Event"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#occursBefore"/>
-        <Class IRI="#Event"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#to"/>
         <Class IRI="#MoveTo"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasEvent"/>
-        <Class IRI="#Event"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasObservedPhenologicStage"/>
-        <Class IRI="#PhenologyStage"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPest"/>
         <Class IRI="#Pest"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#occursAfter"/>
-        <Class IRI="#Event"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#occursBefore"/>
-        <Class IRI="#Event"/>
     </ObjectPropertyRange>
     <DisjointObjectProperties>
         <ObjectProperty IRI="#from"/>
@@ -492,11 +440,6 @@ The event Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/by
         <DataProperty IRI="#isConfidential"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasDocument</IRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has document</Literal>
-    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#AddingProduct</IRI>
@@ -539,17 +482,17 @@ The event Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/by
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Cheking</IRI>
+        <IRI>#Checking</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">révision</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Cheking</IRI>
+        <IRI>#Checking</IRI>
         <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">checking</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Cheking</IRI>
+        <IRI>#Checking</IRI>
         <Literal xml:lang="fr" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">révision</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -593,6 +536,11 @@ The event Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/by
         <Literal xml:lang="fr" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">traitement curatif</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Detasseling</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Detasseling</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Displacement</IRI>
         <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Event describing the displacement in time and space of the different objects participating in experiments. For instance, plants are often transferred, during a single experiment, between installations or compartments with different environmental conditions. Similarly, sensors can be replaced or moved to different positions in the field or greenhouse.</Literal>
@@ -630,7 +578,7 @@ The event Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/by
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Event</IRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Event linked to an object</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Event linked to an object involved in an experiment</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -773,16 +721,6 @@ The event Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/by
         <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">move to</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#ObservedPhenology</IRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">date and value of phenology stage</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#ObservedPhenology</IRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">observed phenology</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Operability</IRI>
         <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Operability</Literal>
@@ -818,14 +756,9 @@ The event Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/by
         <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">pest attack</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#PhenologyStage</IRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is related to the different phenological stages of plants</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#PhenologyStage</IRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">phenology stage</Literal>
+        <IRI>#PhenologyScoring</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">observed phenology</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1038,69 +971,9 @@ The event Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/by
         <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">from device</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasAuthor</IRI>
-        <Literal xml:lang="fr" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">IP du terminal depuis lequel l&apos;annotation est réalisée</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasAuthor</IRI>
-        <Literal xml:lang="fr" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">depuis l&apos;IP</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasAuthor</IRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">from IP</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasCreationDate</IRI>
-        <Literal xml:lang="fr" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">cf datetime onto w3c</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasCreationDate</IRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">creation date</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasCreationDate</IRI>
-        <Literal xml:lang="fr" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">date de création</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasDescription</IRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">description</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasDescription</IRI>
-        <Literal xml:lang="fr" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">description</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasEvent</IRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has event</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasObservedPhenologicStage</IRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has observed phenologic stage</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#hasPest</IRI>
         <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has pest</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasSubject</IRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">subject</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasSubject</IRI>
-        <Literal xml:lang="fr" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">sujet</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1131,6 +1004,11 @@ The event Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/by
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#to</IRI>
         <Literal xml:lang="fr" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">vers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasDocument</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has document</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>

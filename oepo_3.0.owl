@@ -13,13 +13,13 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix terms: <http://purl.org/dc/terms/> .
 @prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
-@base <http://www.phenome-fppn.fr/vocabulary/m3p/2015> .
+@base <http://www.phenome-fppn.fr/vocabulary/2018/oepo> .
 
-<http://www.phenome-fppn.fr/vocabulary/m3p/2015> rdf:type owl:Ontology ;
-                                                  rdfs:label "OpenSILEX - Ontology for Experimental Phenotypic Objects (OEPO)"@en ;
-                                                  dc:creator "Anne Tireau, Llorenç Cabrera-Bosquet, Pascal Neveu (INRA Montpellier)" ;
-                                                  owl:versionInfo "Version 3.0 (2018-04-14) created by INRA - MISTEA - LEPSE"^^xsd:string ;
-                                                  rdfs:comment """INRA MISTEA
+<http://www.phenome-fppn.fr/vocabulary/2018/oepo> rdf:type owl:Ontology ;
+                                                   rdfs:label "OpenSILEX - Ontology for Experimental Phenotypic Objects (OEPO)"@en ;
+                                                   dc:creator "Anne Tireau, Llorenç Cabrera-Bosquet, Pascal Neveu (INRA Montpellier)" ;
+                                                   owl:versionInfo "Version 3.0 (2018-04-14) created by INRA - MISTEA - LEPSE"^^xsd:string ;
+                                                   rdfs:comment """INRA MISTEA
 Copyright © - INRA - 2014 - 2018
 The Object Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/by/4.0/legalcode)"""^^xsd:string .
 
@@ -234,44 +234,16 @@ owl:deprecated rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#fromGeneticProperty
-m3p:fromGeneticProperty rdf:type owl:ObjectProperty ,
-                                 owl:TransitiveProperty ;
-                        rdfs:domain [ rdf:type owl:Class ;
-                                      owl:unionOf ( m3p:GeneticProperty
-                                                    m3p:ScientificObject
-                                                  )
-                                    ] ;
-                        rdfs:range m3p:GeneticProperty .
+###  http://www.phenome-fppn.fr/vocabulary/2018/oepo#hasEnvironmentalFeature
+:hasEnvironmentalFeature rdf:type owl:ObjectProperty ;
+                         rdfs:domain m3p:ObservationVariable ;
+                         rdfs:range m3p:EnvironmentFeature .
 
 
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#fromGenus
-m3p:fromGenus rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf m3p:fromGeneticProperty ;
-              rdfs:range m3p:Genus .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#fromSeedLot
-m3p:fromSeedLot rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf m3p:fromGeneticProperty ;
-                rdfs:range m3p:SeedLot ;
-                rdfs:label "lot de graine"@fr ,
-                           "seed lot"@en .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#fromSeedLotSample
-m3p:fromSeedLotSample rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf m3p:fromGeneticProperty ;
-                      rdfs:range m3p:SeedLotSample ;
-                      rdfs:label "seed lot sample"@en ,
-                                 "échantillon de lot de semence"@fr .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#fromVariety
-m3p:fromVariety rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf m3p:fromGeneticProperty ;
-                rdfs:range m3p:Variety ;
-                rdfs:label "variety"@en .
+###  http://www.phenome-fppn.fr/vocabulary/2018/oepo#hasTrait
+:hasTrait rdf:type owl:ObjectProperty ;
+          rdfs:domain m3p:ObservationVariable ;
+          rdfs:range m3p:Trait .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasAdministrativeContact
@@ -301,19 +273,6 @@ m3p:hasDocument rdf:type owl:ObjectProperty ;
                            "document"@fr .
 
 
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasEnvironmentalCondition
-m3p:hasEnvironmentalCondition rdf:type owl:ObjectProperty ;
-                              rdfs:domain [ rdf:type owl:Class ;
-                                            owl:unionOf ( m3p:Area
-                                                          m3p:Equipement
-                                                          m3p:ProtectiveStructure
-                                                        )
-                                          ] ;
-                              rdfs:range m3p:StudyType ;
-                              rdfs:label "condition environementale"@fr ,
-                                         "environmental condition"@en .
-
-
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasExperiment
 m3p:hasExperiment rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf m3p:hasPart ;
@@ -321,6 +280,23 @@ m3p:hasExperiment rdf:type owl:ObjectProperty ;
                   rdfs:range m3p:Experiment ;
                   rdfs:label "experimentation"@fr ,
                              "has experiment"@en .
+
+
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasGenus
+m3p:hasGenus rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf m3p:hasGermplasmDescriptor ;
+             rdfs:range m3p:Genus .
+
+
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasGeometry
+m3p:hasGeometry rdf:type owl:ObjectProperty ;
+                rdfs:isDefinedBy "http://www.opengis.net/ont/geosparql#hasGeometry" .
+
+
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasGermplasmDescriptor
+m3p:hasGermplasmDescriptor rdf:type owl:ObjectProperty ;
+                           rdfs:domain m3p:ScientificObject ;
+                           rdfs:range m3p:GermplasmDescriptor .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasMethod
@@ -347,6 +323,13 @@ m3p:hasPart rdf:type owl:ObjectProperty ;
                        "has part"@en .
 
 
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasParticipant
+m3p:hasParticipant rdf:type owl:ObjectProperty ;
+                   owl:inverseOf m3p:participatesIn ;
+                   oboInOwl:source "skos:exactMatch http://www.ontobee.org/ontology/rdf/RO?iri=http://purl.obolibrary.org/obo/RO_0000057" ;
+                   rdfs:label "has participant"@en .
+
+
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasProjectCoordinator
 m3p:hasProjectCoordinator rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf m3p:hasContact ;
@@ -360,9 +343,8 @@ m3p:hasProjectCoordinator rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasQuality
-m3p:hasQuality rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf owl:topObjectProperty ;
-               rdf:type owl:FunctionalProperty ;
+m3p:hasQuality rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
                rdfs:range m3p:Quality ;
                rdfs:isDefinedBy "http://purl.org/ppeo/PPEO.owl#hasMethod" ;
                rdfs:label "has quality"@en .
@@ -371,6 +353,7 @@ m3p:hasQuality rdf:type owl:ObjectProperty ;
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasScale
 m3p:hasScale rdf:type owl:ObjectProperty ,
                       owl:FunctionalProperty ;
+             rdfs:domain m3p:ObservationVariable ;
              rdfs:range m3p:Scale ;
              rdfs:isDefinedBy "http://purl.org/ppeo/PPEO.owl#hasScale" ;
              rdfs:label "has scale"@en .
@@ -390,6 +373,28 @@ m3p:hasScientificSupervisor rdf:type owl:ObjectProperty ;
                             rdfs:label "has scientific supervisor"@en .
 
 
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasSeedLot
+m3p:hasSeedLot rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf m3p:hasGermplasmDescriptor ;
+               rdfs:range m3p:SeedLot ;
+               rdfs:label "lot de graine"@fr ,
+                          "seed lot"@en .
+
+
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasSeedLotSample
+m3p:hasSeedLotSample rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf m3p:hasGermplasmDescriptor ;
+                     rdfs:range m3p:SeedLotSample ;
+                     rdfs:label "seed lot sample"@en ,
+                                "échantillon de lot de semence"@fr .
+
+
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasSpecies
+m3p:hasSpecies rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf m3p:hasGermplasmDescriptor ;
+               rdfs:range m3p:Species .
+
+
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasSubProject
 m3p:hasSubProject rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf m3p:hasPart ;
@@ -402,7 +407,7 @@ m3p:hasSubProject rdf:type owl:ObjectProperty ;
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasTechnicalContact
 m3p:hasTechnicalContact rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf m3p:hasContact ;
-                        rdfs:domain m3p:ExperimentalContext ;
+                        rdfs:domain m3p:ExperimentalCondition ;
                         rdfs:label "contact technique"@fr ,
                                    "technical contact"@en .
 
@@ -431,21 +436,11 @@ m3p:hasVariable rdf:type owl:ObjectProperty ;
                            "variable"@fr .
 
 
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#initialAssociatedSensor
-m3p:initialAssociatedSensor rdf:type owl:ObjectProperty ;
-                            rdfs:subPropertyOf owl:topObjectProperty ;
-                            rdfs:domain m3p:ScientificObject ;
-                            rdfs:label "capteur initial associé"@fr ,
-                                       "initial associated sensor"@en .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#isExperimentOfProject
-m3p:isExperimentOfProject rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf m3p:isPartOf ;
-                          rdfs:domain m3p:Experiment ;
-                          rdfs:range m3p:Project ;
-                          rdfs:label "experimentation du projet"@fr ,
-                                     "is experiment of project"@en .
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasVariety
+m3p:hasVariety rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf m3p:hasGermplasmDescriptor ;
+               rdfs:range m3p:Variety ;
+               rdfs:label "variety"@en .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#isPartOf
@@ -453,20 +448,6 @@ m3p:isPartOf rdf:type owl:ObjectProperty ,
                       owl:TransitiveProperty ;
              rdfs:label "est partie de"@fr ,
                         "is part of"@en .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#isParticipantOf
-m3p:isParticipantOf rdf:type owl:ObjectProperty ;
-                    owl:inverseOf m3p:participatesIn .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#isSubProjectOf
-m3p:isSubProjectOf rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf m3p:isPartOf ;
-                   rdfs:domain m3p:SubProject ;
-                   rdfs:range m3p:Project ;
-                   rdfs:label "is sub-project of"@en ,
-                              "sous-projt de"@fr .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#participatesIn
@@ -483,21 +464,17 @@ m3p:participatesIn rdf:type owl:ObjectProperty ,
                               "participe à"@fr .
 
 
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#sfContains
+m3p:sfContains rdf:type owl:ObjectProperty ;
+               rdfs:isDefinedBy "http://www.opengis.net/ont/geosparql#sfContains" .
+
+
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#uses
 m3p:uses rdf:type owl:ObjectProperty ;
          rdfs:domain m3p:Experiment ;
          rdfs:range m3p:Installation ;
          rdfs:label "uses"@en ,
                     "utilise"@fr .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#withinPot
-m3p:withinPot rdf:type owl:ObjectProperty ,
-                       owl:FunctionalProperty ;
-              rdfs:domain m3p:ScientificObject ;
-              rdfs:range m3p:Pot ;
-              rdfs:label "dans le pot"@fr ,
-                         "within pot"@en .
 
 
 #################################################################
@@ -567,7 +544,7 @@ m3p:hasFinancialName rdf:type owl:DatatypeProperty ;
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasFinancialSupport
 m3p:hasFinancialSupport rdf:type owl:DatatypeProperty ;
-                        rdfs:domain m3p:ExperimentalContext ;
+                        rdfs:domain m3p:ExperimentalCondition ;
                         rdfs:label "financial support"@en ,
                                    "type de financement"@fr .
 
@@ -581,7 +558,7 @@ m3p:hasInitialPosition rdf:type owl:DatatypeProperty ;
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasKeywords
 m3p:hasKeywords rdf:type owl:DatatypeProperty ;
-                rdfs:domain m3p:ExperimentalContext ;
+                rdfs:domain m3p:ExperimentalCondition ;
                 rdfs:label "keywords"@en ,
                            "mot-clés"@fr .
 
@@ -645,6 +622,7 @@ m3p:hasStartDate rdf:type owl:DatatypeProperty ;
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#hasTagPattern
 m3p:hasTagPattern rdf:type owl:DatatypeProperty ;
                   rdfs:domain m3p:Experiment ;
+                  rdfs:comment "Alias description"@en ;
                   rdfs:label "model de code barre"@fr ,
                              "tag pattern"@en .
 
@@ -695,7 +673,7 @@ m3p:hasWebsite rdf:type owl:DatatypeProperty ;
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#AccessionName
 m3p:AccessionName rdf:type owl:Class ;
-                  rdfs:subClassOf m3p:GeneticProperty ;
+                  rdfs:subClassOf m3p:GermplasmDescriptor ;
                   rdfs:isDefinedBy "skos:closeMatch http://www.cropontology.org/rdf/CO_020:0000011" ;
                   rdfs:label "accession name"@en ,
                              "le nom de l'accession"@fr .
@@ -703,7 +681,7 @@ m3p:AccessionName rdf:type owl:Class ;
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#AccessionNumber
 m3p:AccessionNumber rdf:type owl:Class ;
-                    rdfs:subClassOf m3p:GeneticProperty ;
+                    rdfs:subClassOf m3p:GermplasmDescriptor ;
                     rdfs:isDefinedBy "skos:closeMatch http://www.cropontology.org/rdf/CO_020:0000089" ;
                     rdfs:label "accession number"@en ,
                                "numéro d'accession"@fr .
@@ -870,7 +848,7 @@ m3p:ElectricalResistanceHumiditySensor rdf:type owl:Class ;
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#ElectricalResistanceThermometer
 m3p:ElectricalResistanceThermometer rdf:type owl:Class ;
                                     rdfs:subClassOf m3p:TemperatureSensor ;
-                                    dc:source "skos:closeMatch Resistance thermometer [GAMP 2.4.1.2] http://wmo.multitranstms.com/MultiTransWeb/Web.mvc" ;
+                                    dc:source "skos:closeMatch Resistance thermometer http://wmo.multitranstms.com/MultiTransWeb/Web.mvc" ;
                                     rdfs:comment "For small temperature changes, the increase in resistance of pure metals is proportional to the change in temperature. Often made in Platinum." ;
                                     rdfs:isDefinedBy "http://purl.oclc.org/NET/ssnx/meteo/aws#ElectricalResistanceThermometer" ;
                                     rdfs:label "electrical resistance thermometer" .
@@ -885,7 +863,7 @@ m3p:EnvironmentFeature rdf:type owl:Class ;
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#Equipement
 m3p:Equipement rdf:type owl:Class ;
-               rdfs:subClassOf m3p:ExperimentalContext ;
+               rdfs:subClassOf m3p:ExperimentalCondition ;
                rdfs:comment "An INSTALLATION is the elementary level for data acquisition in a specific type of experiments. It stands for other frequently used terms such as ‘platform’, ‘facility’ or others."@en ;
                rdfs:label "equipement"@en ,
                           "équipement"@fr .
@@ -899,12 +877,12 @@ m3p:Experiment rdf:type owl:Class ;
                           "expérimentation"@fr .
 
 
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#ExperimentalContext
-m3p:ExperimentalContext rdf:type owl:Class ;
-                        dc:source "skos:closeMatch http://www.ontobee.org/ontology/rdf/PECO?iri=http://purl.obolibrary.org/obo/PECO_0007359"@en ;
-                        rdfs:comment "A set of environmental conditions, infrastructure and supporting equipment or resources necessary to conduct a given experiment and in which plants, plots or group of plants are raised"@en ;
-                        rdfs:label "context expérimental"@fr ,
-                                   "experimental context"@en .
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#ExperimentalCondition
+m3p:ExperimentalCondition rdf:type owl:Class ;
+                          dc:source "skos:closeMatch http://www.ontobee.org/ontology/rdf/PECO?iri=http://purl.obolibrary.org/obo/PECO_0007359"@en ;
+                          rdfs:comment "A set of environmental conditions, infrastructure and supporting equipment or resources necessary to conduct a given experiment and in which plants, plots or group of plants are raised"@en ;
+                          rdfs:label "context expérimental"@fr ,
+                                     "experimental context"@en .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#Fan
@@ -931,6 +909,7 @@ m3p:Field rdf:type owl:Class ;
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#FieldExperiment
 m3p:FieldExperiment rdf:type owl:Class ;
                     rdfs:subClassOf m3p:Experiment ;
+                    oboInOwl:source "skos:closeMatch http://www.ontobee.org/ontology/rdf/PECO?iri=http://purl.obolibrary.org/obo/PECO_0007256" ;
                     rdfs:label "field experiment"@en .
 
 
@@ -941,13 +920,6 @@ m3p:FieldRobot rdf:type owl:Class ;
                           "phenomobile"@fr .
 
 
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#FieldStudy
-m3p:FieldStudy rdf:type owl:Class ;
-               rdfs:subClassOf m3p:StudyType ;
-               rdfs:isDefinedBy "http://www.ontobee.org/ontology/rdf/PECO?iri=http://purl.obolibrary.org/obo/PECO_0007256"@en ;
-               rdfs:label "field study"@en .
-
-
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#Gantry
 m3p:Gantry rdf:type owl:Class ;
            rdfs:subClassOf m3p:Vector ;
@@ -955,19 +927,19 @@ m3p:Gantry rdf:type owl:Class ;
                       "portique"@fr .
 
 
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#GeneticProperty
-m3p:GeneticProperty rdf:type owl:Class ;
-                    rdfs:subClassOf owl:Thing ;
-                    rdfs:label "genetic property"@en ,
-                               "propriété génétique"@fr .
-
-
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#Genus
 m3p:Genus rdf:type owl:Class ;
-          rdfs:subClassOf m3p:GeneticProperty ;
+          rdfs:subClassOf m3p:GermplasmDescriptor ;
           rdfs:isDefinedBy "http://www.cropontology.org/rdf/CO_020:0000005" ;
           rdfs:label "genre"@fr ,
                      "genus"@en .
+
+
+###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#GermplasmDescriptor
+m3p:GermplasmDescriptor rdf:type owl:Class ;
+                        rdfs:subClassOf owl:Thing ;
+                        oboInOwl:source "skos:closeMatch http://www.cropontology.org/rdf/CO_020:0000074" ;
+                        rdfs:label "germplasm descriptor information"@en .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#Greenhouse
@@ -980,14 +952,8 @@ m3p:Greenhouse rdf:type owl:Class ;
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#GreenhouseExperiment
 m3p:GreenhouseExperiment rdf:type owl:Class ;
                          rdfs:subClassOf m3p:Experiment ;
+                         oboInOwl:source "skos:closeMatch http://www.ontobee.org/ontology/rdf/PECO?iri=http://purl.obolibrary.org/obo/PECO_0007248" ;
                          rdfs:label "greenhouse experiment"@en .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#GreenhouseStudy
-m3p:GreenhouseStudy rdf:type owl:Class ;
-                    rdfs:subClassOf m3p:StudyType ;
-                    rdfs:isDefinedBy "http://www.ontobee.org/ontology/rdf/PECO?iri=http://purl.obolibrary.org/obo/PECO_0007248"@en ;
-                    rdfs:label "greenhosue study"@en .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#GrippingArm
@@ -1007,14 +973,8 @@ m3p:GrowthChamber rdf:type owl:Class ;
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#GrowthChamberExperiment
 m3p:GrowthChamberExperiment rdf:type owl:Class ;
                             rdfs:subClassOf m3p:Experiment ;
+                            oboInOwl:source "skos:closeMatch http://www.ontobee.org/ontology/rdf/PECO?iri=http://purl.obolibrary.org/obo/PECO_0007269" ;
                             rdfs:label "growth chamber experiment"@en .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#GrowthChamberStudy
-m3p:GrowthChamberStudy rdf:type owl:Class ;
-                       rdfs:subClassOf m3p:StudyType ;
-                       rdfs:isDefinedBy "http://www.ontobee.org/ontology/rdf/PECO?iri=http://purl.obolibrary.org/obo/PECO_0007269"@en ;
-                       rdfs:label "growth chamber study"@en .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#GypsumBlock
@@ -1055,12 +1015,13 @@ m3p:HyperspectralCamera rdf:type owl:Class ;
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#ImagingCabin
 m3p:ImagingCabin rdf:type owl:Class ;
-                 rdfs:subClassOf m3p:Actuator .
+                 rdfs:subClassOf m3p:Actuator ;
+                 rdfs:label "Imaging cabin"@en .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#Infrastucture
 m3p:Infrastucture rdf:type owl:Class ;
-                  rdfs:subClassOf m3p:ExperimentalContext ;
+                  rdfs:subClassOf m3p:ExperimentalCondition ;
                   rdfs:label "infrastructure"@en ,
                              "infrastructure"@fr .
 
@@ -1239,7 +1200,7 @@ m3p:PrecipitationSensor rdf:type owl:Class ;
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#Project
 m3p:Project rdf:type owl:Class ;
-            rdfs:subClassOf m3p:ExperimentalContext ;
+            rdfs:subClassOf m3p:ExperimentalCondition ;
             rdfs:comment "PROJECT (e.g. EU or national projects) involves partners that are in charge of experiments performed in one or more local infrastructures."@en ;
             rdfs:label "project"@en ,
                        "projet"@fr .
@@ -1330,7 +1291,8 @@ m3p:Sample rdf:type owl:Class ;
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#Scale
 m3p:Scale rdf:type owl:Class ;
-          rdfs:isDefinedBy "http://purl.org/ppeo/PPEO.owl#PPEO_000012" .
+          rdfs:isDefinedBy "http://purl.org/ppeo/PPEO.owl#PPEO_000012" ;
+          rdfs:label "scale"@en .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#ScientificDocument
@@ -1367,7 +1329,7 @@ m3p:Seed rdf:type owl:Class ;
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#SeedLot
 m3p:SeedLot rdf:type owl:Class ;
-            rdfs:subClassOf m3p:GeneticProperty ;
+            rdfs:subClassOf m3p:GermplasmDescriptor ;
             dc:source "skos:closeMatch http://www.cropontology.org/rdf/CO_020:0000089" ;
             rdfs:label "lot de graine"@fr ,
                        "seed lot"@en .
@@ -1375,7 +1337,7 @@ m3p:SeedLot rdf:type owl:Class ;
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#SeedLotSample
 m3p:SeedLotSample rdf:type owl:Class ;
-                  rdfs:subClassOf m3p:GeneticProperty ;
+                  rdfs:subClassOf m3p:GermplasmDescriptor ;
                   rdfs:label "seed lot sample"@en ,
                              "échantillon de lot de graine"@fr .
 
@@ -1384,7 +1346,7 @@ m3p:SeedLotSample rdf:type owl:Class ;
 m3p:SensingDevice rdf:type owl:Class ;
                   rdfs:subClassOf m3p:Device ;
                   rdfs:comment "devices providing numerical data, e.g. environment sensors or cameras"@en ;
-                  rdfs:label "sesning device"@en .
+                  rdfs:label "sensing device"@en .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#Shadows
@@ -1405,7 +1367,7 @@ m3p:Silk rdf:type owl:Class ;
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#Species
 m3p:Species rdf:type owl:Class ;
-            rdfs:subClassOf m3p:GeneticProperty ;
+            rdfs:subClassOf m3p:GermplasmDescriptor ;
             rdfs:isDefinedBy "http://www.cropontology.org/terms/CO_020:0000006/species" ;
             rdfs:label "espèce"@fr ,
                        "species"@en .
@@ -1417,13 +1379,6 @@ m3p:Spectroradiometer rdf:type owl:Class ;
                       dc:source "https://earthobservatory.nasa.gov/Features/RemoteSensing/remote_08.php"@en ;
                       rdfs:comment "A radiometer that can measure the intensity of radiation in multiple wavelength bands (i.e., multispectral). Oftentimes the bands are of a high spectral resolution—designed for the remote sensing of specific parameters such as sea surface temperature, cloud characteristics, ocean color, vegetation, trace chemical species in the atmosphere, etc."@en ;
                       rdfs:label "spectroradiometer"@en .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#StudyType
-m3p:StudyType rdf:type owl:Class ;
-              rdfs:subClassOf m3p:ExperimentalContext ;
-              rdfs:isDefinedBy "http://www.ontobee.org/ontology/rdf/PECO?iri=http://purl.obolibrary.org/obo/PECO_0007231"@en ;
-              rdfs:label "study type"@en .
 
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#SubProject
@@ -1468,7 +1423,7 @@ m3p:Tensiometer rdf:type owl:Class ;
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#Thermistor
 m3p:Thermistor rdf:type owl:Class ;
                rdfs:subClassOf m3p:TemperatureSensor ;
-               dc:source "skos:closeMatch Thermistor [GAMP 2.4.1.2] http://wmo.multitranstms.com/MultiTransWeb/Web.mvc" ;
+               dc:source "skos:closeMatch Thermistor http://wmo.multitranstms.com/MultiTransWeb/Web.mvc" ;
                rdfs:comment "Based on the variation of resistance of a semiconductor with a relatively large temperature coefficient of resistance, either positive (PTC) or negative (NTC) depending upon the actual material" ;
                rdfs:isDefinedBy "http://purl.oclc.org/NET/ssnx/meteo/aws#Thermistor" ;
                rdfs:label "thermistor" .
@@ -1477,7 +1432,7 @@ m3p:Thermistor rdf:type owl:Class ;
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#Thermocouple
 m3p:Thermocouple rdf:type owl:Class ;
                  rdfs:subClassOf m3p:TemperatureSensor ;
-                 dc:source "skos:closeMatch Thermocouple [GAMP 2.4.1.2] http://wmo.multitranstms.com/MultiTransWeb/Web.mvc" ;
+                 dc:source "skos:closeMatch Thermocouple http://wmo.multitranstms.com/MultiTransWeb/Web.mvc" ;
                  rdfs:comment "Based on the generation of an electromotive force at the junction between two metals in contact, which is function of the temperature of the two metals" ;
                  rdfs:isDefinedBy "http://purl.oclc.org/NET/ssnx/meteo/aws#Thermocouple" ;
                  rdfs:label "thermocouple" .
@@ -1492,7 +1447,7 @@ m3p:Trait rdf:type owl:Class ;
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#Treatment
 m3p:Treatment rdf:type owl:Class ;
-              rdfs:subClassOf m3p:ExperimentalContext ;
+              rdfs:subClassOf m3p:ExperimentalCondition ;
               rdfs:isDefinedBy "http://purl.org/ppeo/PPEO.owl#PPEO_000018" ;
               rdfs:label "traitement"@fr ,
                          "treatment"@en .
@@ -1501,7 +1456,8 @@ m3p:Treatment rdf:type owl:Class ;
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#UAV
 m3p:UAV rdf:type owl:Class ;
         rdfs:subClassOf m3p:Vector ;
-        rdfs:label "UAV"@en ,
+        rdfs:comment "Unmanned Aerial Vehicle (UAV), commonly known as a drone"@en ;
+        rdfs:label "Unmanned Aerial Vehicle"@en ,
                    "drône"@fr .
 
 
@@ -1516,7 +1472,7 @@ m3p:UltrasonicWindSensor rdf:type owl:Class ;
 
 ###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#Variety
 m3p:Variety rdf:type owl:Class ;
-            rdfs:subClassOf m3p:GeneticProperty ;
+            rdfs:subClassOf m3p:GermplasmDescriptor ;
             dc:source "skos:closeMatch http://aims.fao.org/aos/agrovoc/c_1423211760123.rdf" ;
             rdfs:label "variety"@fr ,
                        "variété"@fr .
@@ -1546,23 +1502,8 @@ m3p:WindSensor rdf:type owl:Class ;
 
 
 ###  http://xmlns.com/foaf/0.1/Agent
-foaf:Agent rdf:type owl:Class .
-
-
-#################################################################
-#    Individuals
-#################################################################
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#controlledConditions
-m3p:controlledConditions rdf:type owl:NamedIndividual .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#naturalConditions
-m3p:naturalConditions rdf:type owl:NamedIndividual .
-
-
-###  http://www.phenome-fppn.fr/vocabulary/m3p/2015#semiControlledConditions
-m3p:semiControlledConditions rdf:type owl:NamedIndividual .
+foaf:Agent rdf:type owl:Class ;
+           rdfs:label "Agent"@en .
 
 
 #################################################################
