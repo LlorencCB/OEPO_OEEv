@@ -348,6 +348,9 @@ The Object Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/b
         <Class IRI="#Infrastucture"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#EuropeanInfrastructure"/>
+    </Declaration>
+    <Declaration>
         <Class abbreviatedIRI="foaf:Agent"/>
     </Declaration>
     <Declaration>
@@ -504,10 +507,10 @@ The Object Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/b
         <Class IRI="#Quality"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Treatment"/>
+        <Class IRI="#Equipement"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Equipement"/>
+        <Class IRI="#Treatment"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasTreatment"/>
@@ -683,6 +686,10 @@ The Object Ontology is licensed by CC 4.0 (http://creativecommons.org/licenses/b
     <SubClassOf>
         <Class IRI="#Equipement"/>
         <Class IRI="#ExperimentalCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EuropeanInfrastructure"/>
+        <Class IRI="#Infrastucture"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Fan"/>
@@ -1768,6 +1775,16 @@ Peut définir une zone au sens physique ou théorique</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Equipement</IRI>
         <Literal xml:lang="fr" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">équipement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EuropeanInfrastructure</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The ESFRI listed project EMPHASIS aims at a synergistic development and long-term operation of plant phenotyping infrastructure in Europe (https://emphasis.plant-phenotyping.eu/) by developing tools and methods for multi-scale phenotyping, allowing one to analyze genotype performance and trait diversity in current and future European environmental conditions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#EuropeanInfrastructure</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">European Infrastructure</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
